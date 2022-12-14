@@ -19,10 +19,11 @@ export class AppComponent  implements OnInit{
   ngOnInit() :void{
     this.store.dispatch(initAction());
     /**methode qui est partie integrante du store qui nous permet d'acceder aux element du store */
-    this.store.select((state:any) => state.rootReducer.user).subscribe(response=>{
+      this.store.select((state:any) => state.rootReducer.user).subscribe(response=>{
       console.log("Selecteur :", response);
     /**Procesus de passage de donnée de mon store vers une template */
       this.user=response;
+      
     })
   }
 
